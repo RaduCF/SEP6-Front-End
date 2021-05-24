@@ -1,0 +1,50 @@
+<div class="main-container">
+  <div class="fluff-div">
+    <p>Fluff</p>
+  </div>
+
+  <div class="main-info">
+    <div class="info-left">
+      <div class="explore-div">
+        <div class="explore-title">
+          <h4>Explore movies:</h4>
+        </div>
+        <div class="explore-content">
+          <div *ngFor="let movie of exploreMovies" class="movie-div"> <!-- Will be ngFor -->
+            <div class="explore-image">
+              <img src="../../assets/images/Meddit.png" alt="Trending Movie Image" class="movie-img">
+            </div>
+            <div class="movie-content">
+              <p>Here will be some info about the movie...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="additions-div">
+        <div class="additions-title">
+          <h4>New movies:</h4>
+        </div>
+        <div class="movie-cards">
+          <div *ngFor="let movie of newMovies" class="movie-card"> <!-- Will be ngFor -->
+            <div class="card-image">
+              <img src="../../assets/images/Meddit.png" alt="Trending Movie Image" class="movie-img">
+            </div>
+            <div class="card-info">
+              <p>Title?</p>
+              <p>Other info?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="statistics-div">
+      <p>Statistics:</p>
+    </div>
+  </div>
+
+  <div class="footer-div">
+    <p>© 2021 by Meddit.com, Inc. All rights reserved</p>
+  </div>
+</div>

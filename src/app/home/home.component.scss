@@ -1,0 +1,128 @@
+.main-container {
+  width: 100%;
+}
+
+.fluff-div {
+  width: 100%;
+  height: 200px;
+  border: solid 1px grey;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  padding: 5px;
+}
+
+.main-info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 570px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.info-left {
+  width: 75%;
+  height: 100%;
+  border: solid 1px grey;
+  border-radius: 15px;
+}
+
+.explore-div {
+  width: 100%;
+  height: 50%;
+  margin-bottom: 1%;
+}
+
+.explore-title {
+  width: 100%;
+  padding-left: 10px;
+}
+
+.explore-content {
+  width: 100%;
+  height: 89%;
+  overflow: auto;
+  border-bottom: solid 1px grey;
+  border-top: solid 1px grey;
+}
+
+.movie-div {
+  display: flex;
+  width: 100%;
+  height: 105px;
+  border: solid 1px grey;
+  border-radius: 15px;
+  margin-bottom: 5px;
+}
+
+.explore-image {
+  width: 12%;
+  height: 100px;
+}
+
+.movie-img {
+  width: 100%;
+  height: 100%;
+}
+
+.movie-content {
+  width: 87%;
+  height: 100px;
+}
+
+.additions-div {
+  width: 100%;
+  height: 47%;
+  border-top: solid 1px grey;
+}
+
+.additions-title {
+  width: 100%;
+  padding-left: 10px;
+}
+
+.movie-cards {
+  display: flex;
+  width: 100%;
+  height: 85%;
+  border-top: solid 1px grey;
+  padding: 1%;
+  padding-right: 0%;
+}
+
+.movie-card {
+  width: 25%;
+  height: 100%;
+  border: solid grey 1px;
+  border-radius: 7px;
+  margin-right: 1%;
+}
+
+.card-image {
+  width: 100%;
+  height: 150px;
+  border-bottom: solid 1px grey;
+}
+
+.card-info {
+  width: 100%;
+  text-align: center;
+}
+
+.statistics-div {
+  width: 25%;
+  height: 100%;
+  border: solid 1px grey;
+  border-radius: 15px;
+  padding: 5px;
+  margin-left: 1%;
+}
+
+.footer-div {
+  text-align: center;
+  width: 100%;
+  height: 30px;
+  // border: solid 1px grey;
+  border-radius: 15px;
+  padding: 5px;
+}
