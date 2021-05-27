@@ -9,7 +9,6 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthComponent } from './auth/auth.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
-import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { MovieInfoComponent } from './movie-info/movie-info.component';
 import { HomeComponent } from './home/home.component';
 
@@ -31,12 +30,7 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule
   ],
   providers: [
-    // MovieService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptorService,
-      multi: true
-    }
+    // MovieService
   ],
   bootstrap: [AppComponent]
 })
