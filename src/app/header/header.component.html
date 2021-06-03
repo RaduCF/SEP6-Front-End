@@ -5,21 +5,21 @@
     </div>
 
     <div class="collapse navbar-collapse nav-bar">
-      <ul class="nav navbar-nav">
-        <li routerLinkActive="active">
+      <!-- <ul class="nav navbar-nav">
+      </ul> -->
+      <input matInput class="nav navbar-nav search-bar" type="text" placeholder="Search" [(ngModel)]="searchStr" (keyup.enter)="searchMovies()">
+      <ul class="nav navbar-nav navbar-right">
+        <li routerLinkActive="active"  *ngIf="!isAuthenticated">
           <a routerLink="/auth">Authenticate</a>
         </li>
-        <!-- <li routerLinkActive="active">
-          <a routerLink="/movie-info"></a>
-        </li> -->
-      </ul>
-      <input matInput class="nav navbar-nav search-bar" type="text" placeholder="Search">
-      <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" appDropdown *ngIf="isAuthenticated">
           <a style="cursor: pointer;" class="dropdown-toggle" role="button"
             >User <span class="caret"></span
           ></a>
           <ul class="dropdown-menu">
+            <li routerLinkActive="active">
+              <a routerLink="/">Top List</a>
+            </li>
             <li>
               <a style="cursor: pointer;" (click)="onLogout()">Logout</a>
             </li>
