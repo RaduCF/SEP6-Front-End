@@ -11,10 +11,12 @@ import { Router } from '@angular/router';
 })
 export class MovieService {
   private movieSearchUrl = '/meddit/movieSubreddit/';  // URL to movie api
+  private userId = 1;
 
-  public searchedMovies$: BehaviorSubject<MovieSearchResult[]> = new BehaviorSubject<MovieSearchResult[]>(null);
   public popularMovies$: BehaviorSubject<MovieSearchResult[]> = new BehaviorSubject<MovieSearchResult[]>(null);
   public latestMovies$: BehaviorSubject<MovieSearchResult[]> = new BehaviorSubject<MovieSearchResult[]>(null);
+
+  public searchedMovies$: BehaviorSubject<MovieSearchResult[]> = new BehaviorSubject<MovieSearchResult[]>(null);
   public movie$: BehaviorSubject<Movie> = new BehaviorSubject<Movie>(null);
 
   constructor(private http: HttpClient, private router: Router) {
@@ -24,7 +26,8 @@ export class MovieService {
 
   public getMoviesByName(searchStr: string) {
     try {
-      const resp = this.http.get<MovieSearchResult[]>(environment.apiConfig.api_local_url + this.movieSearchUrl + 'search/' + searchStr)
+      const resp = this.http.get<MovieSearchResult[]>(environment.apiConfig.api_url +
+                          this.movieSearchUrl + 'search/' + searchStr)
         .subscribe((data: MovieSearchResult[]) => {
           this.searchedMovies$.next(data);
           console.log(this.searchedMovies$);
@@ -58,12 +61,12 @@ export class MovieService {
 
   public getMoviesById(movieId: number) {
     try {
-      const resp = this.http.get<Movie>(environment.apiConfig.api_local_url + this.movieSearchUrl + movieId + '?user_id=1')
+      const resp = this.http.get<Movie>(environment.apiConfig.api_local_url +
+                this.movieSearchUrl + movieId + '?user_id=' + this.userId)
         .subscribe((data: Movie) => {
           this.movie$.next(data);
           console.log(this.movie$);
         });
-      console.log(resp);
       return resp;
     } catch (error) {
       console.error(error);
