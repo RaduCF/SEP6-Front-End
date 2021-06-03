@@ -16,11 +16,7 @@ export const environment = {
   },
   apiConfig: {
     api_url: 'http://34.117.170.186:8080',
-    api_local_url: 'http://localhost:8080',
-    // headers: {
-    //   sessionToken: 'X-NordicPlanner-Session-Token',
-    //   orgKey: 'X-NordicPlanner-Database'
-    // }
+    api_local_url: 'http://localhost:8080'
   }
 };
 
