@@ -1,0 +1,118 @@
+<div class="main-container">
+
+  <div class="movie-info-div">
+    <div class="movie-image-div">
+      <img id="movie-img" src="{{ 'https://image.tmdb.org/t/p/original' + movie?.details.poster_path }}" />
+    </div>
+    <div class="info-outer-div">
+      <div class="info-inner-div">
+        <div class="header">
+          <div class="title-div">
+            <h4 class="title-text">{{ movie?.details.title }}</h4>
+          </div>
+          <div class="date-div">
+            <h5 class="date-text">Release date: {{  movie?.details.release_date }}</h5>
+          </div>
+          <div class="status-div">
+            <h5 class="status-text">Status: {{  movie?.details.status }}</h5>
+          </div>
+        </div>
+        <div class="more-info">
+          <div class="runtime-div">
+            <p class="runtime-text">Runtime: {{  movie?.details.runtime }} minutes</p>
+          </div>
+          <div class="overview-div">
+            <p class="overview-text">{{  movie?.details.synopsis }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cast-div">
+        <div class="person-line">
+          <div class="card-div" *ngIf="castActing[0]">
+            <div class="person-image">
+              <img class="avatar" src="{{ 'https://image.tmdb.org/t/p/original' + castActing[0]?.profilePicture }}" />
+            </div>
+            <div class="person-info">
+              <p class="info-text">{{ castActing[0]?.name }}</p>
+              <p class="info-text">Actor</p>
+            </div>
+          </div>
+          <div class="card-div" *ngIf="castActing[1]">
+            <div class="person-image">
+              <img class="avatar" src="{{ 'https://image.tmdb.org/t/p/original' + castActing[1]?.profilePicture }}" />
+            </div>
+            <div class="person-info">
+              <p class="info-text">{{ castActing[1]?.name }}</p>
+              <p class="info-text">Actor</p>
+            </div>
+          </div>
+          <div class="card-div" *ngIf="castActing[2]">
+            <div class="person-image">
+              <img class="avatar" src="{{ 'https://image.tmdb.org/t/p/original' + castActing[2]?.profilePicture }}" />
+            </div>
+            <div class="person-info">
+              <p class="info-text">{{ castActing[2]?.name }}</p>
+              <p class="info-text">Actor</p>
+            </div>
+          </div>
+          <div class="card-div" *ngIf="castActing[3]">
+            <div class="person-image">
+              <img class="avatar" src="{{ 'https://image.tmdb.org/t/p/original' + castActing[3]?.profilePicture }}" />
+            </div>
+            <div class="person-info">
+              <p class="info-text">{{ castActing[3]?.name }}</p>
+              <p class="info-text">Actor</p>
+            </div>
+          </div>
+        </div>
+        <div class="person-line">
+          <div class="card-div" *ngIf="castActing[4]">
+            <div class="person-image">
+              <img class="avatar" src="{{ 'https://image.tmdb.org/t/p/original' + castActing[4]?.profilePicture }}" />
+            </div>
+            <div class="person-info">
+              <p class="info-text">{{ castActing[4]?.name }}</p>
+              <p class="info-text">Actor</p>
+            </div>
+          </div>
+          <div class="card-div" *ngIf="castActing[5]">
+            <div class="person-image">
+              <img class="avatar" src="{{ 'https://image.tmdb.org/t/p/original' + castActing[5]?.profilePicture }}" />
+            </div>
+            <div class="person-info">
+              <p class="info-text">{{ castActing[5]?.name }}</p>
+              <p class="info-text">Actor</p>
+            </div>
+          </div>
+          <div class="card-div" *ngIf="castProduction">
+            <div class="person-image">
+              <img class="avatar" src="{{ 'https://image.tmdb.org/t/p/original' + castProduction?.profilePicture }}" />
+            </div>
+            <div class="person-info">
+              <p class="info-text">{{ castProduction?.name }}</p>
+              <p class="info-text">Production</p>
+            </div>
+          </div>
+          <div class="card-div" *ngIf="castDirector">
+            <div class="person-image">
+              <img class="avatar" src="{{ 'https://image.tmdb.org/t/p/original' + castDirector?.profilePicture }}" />
+            </div>
+            <div class="person-info">
+              <p class="info-text">{{ castDirector?.name }}</p>
+              <p class="info-text">Director</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-div" *ngIf="movie?.videos.length > 0">
+      <video id="videoPlayer" controls (click)="toggleVideo()" #videoPlayer>
+          <source src="https://www.youtube.com/watch?v={{ movie.videos[0] }}" type="video/mp4" />
+          Browser not supported
+      </video>
+  </div>
+
+</div>

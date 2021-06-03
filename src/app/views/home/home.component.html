@@ -1,0 +1,79 @@
+<div class="main-container">
+
+  <div class="main-info">
+    <div class="info-left">
+      <div class="explore-div">
+        <div class="explore-title">
+          <h4>Popular movies:</h4>
+        </div>
+        <div class="explore-content">
+          <div *ngFor="let movie of popularMovies" class="movie-div">
+            <div class="explore-image">
+              <img src="{{ movie.poster_path ? ('https://image.tmdb.org/t/p/original' + movie.poster_path) : 'http://scanivalve.com/wp-content/plugins/lightbox/images/No-image-found.jpg' }}" alt="Trending Movie Image" class="movie-img">
+            </div>
+            <div class="info-div">
+              <div class="header">
+                <div class="title-div">
+                  <h4>{{ movie.title }}</h4>
+                </div>
+                <div class="date-div">
+                  <h4>Release date: {{ movie.release_Date }}</h4>
+                </div>
+                <div class="rating-div">
+                  <h4>Rating: {{ movie.rating }}/10</h4>
+                </div>
+              </div>
+
+              <div class="overvier-div">
+                <p class="overview-text">{{ movie.overview }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="additions-div">
+        <div class="additions-title">
+          <h4>New movies:</h4>
+        </div>
+        <div class="movie-cards">
+          <div *ngFor="let movie of newMovies" class="movie-card">
+            <div class="card-image">
+              <img src="{{ movie.poster_path ? ('https://image.tmdb.org/t/p/original' + movie.poster_path) : 'http://scanivalve.com/wp-content/plugins/lightbox/images/No-image-found.jpg' }}" alt="Trending Movie Image" class="movie-img">
+            </div>
+            <div class="card-info">
+              <p>{{ movie.title }}</p>
+              <p>Release date: {{ movie.release_Date }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="statistics-div">
+      <div class="statistics-title-div">
+        <h4 style="color: cornflowerblue;">Top trending movies:</h4>
+      </div>
+
+      <div class="top-movies-div">
+        <div class="top-movie" *ngFor="let movie of topMovies">
+          <p>{{ movie.rank + ". " + movie.title }}</p>
+        </div>
+      </div>
+
+      <div class="favourite-title-div">
+        <h4 style="color: cornflowerblue;">Top favourite movies:</h4>
+      </div>
+
+      <div class="fav-movies-div">
+        <div class="fav-movie" *ngFor="let movie of favMovies">
+          <p>{{ movie.rank + ". " + movie.title }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-div">
+    <p>© 2021 by Meddit.com, Inc. All rights reserved</p>
+  </div>
+</div>
